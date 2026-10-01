@@ -12,7 +12,7 @@ const CLUSTERS = [
 ];
 
 const generateClusterPoints = () => {
-  const points = [];
+  const points: any[] = [];
   const centers = [
     { cx: 32, cy: 38, id: 1, label: 'Fuzzy Place', quote: '"Looked like a rustic wine cellar with arched brick ceiling"' },
     { cx: 72, cy: 28, id: 2, label: 'Utility Docs', quote: '"The serial number sticker behind my dishwasher was illegible"' },
