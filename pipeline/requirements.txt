@@ -1,0 +1,14 @@
+google-play-scraper==1.2.4
+praw==7.7.1
+pandas==2.2.0
+langdetect==1.0.9
+requests==2.31.0
+PyYAML==6.0.1
+python-dotenv==1.0.1
+tqdm==4.66.1
+streamlit==1.31.0
+scikit-learn==1.4.0
+google-genai==0.3.0
+pydantic==2.6.1
+umap-learn==0.5.5
+hdbscan==0.8.33

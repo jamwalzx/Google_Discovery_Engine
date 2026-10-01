@@ -1,0 +1,297 @@
+# PROJECT BRIEF: "RecallScope", an AI-Powered Discovery Engine for Vague-Memory Photo Retrieval
+
+You are acting as a senior full-stack engineer, applied-AI/data engineer, and product designer working together. Build a production-quality, publicly deployable AI discovery engine end to end: data collection, LLM analysis pipeline, evaluation, analytics, conversational evidence layer, and a polished UI/UX.
+
+**Before writing any code, produce an implementation plan (architecture, stack, data flow, milestones, risks) and wait for my approval.** Then build in the phases listed in Section 15. Never hardcode API keys; use environment variables and provide a `.env.example`.
+
+---
+
+## 1. Context and Purpose
+
+I am a Product Manager candidate on the Core Experience team of Google Photos. My strategic goal is:
+
+> **Increase the percentage of users who successfully retrieve a photo they remember but cannot precisely describe when they start searching.**
+
+Example situations: "that small café we went to during our Goa trip", "the picture of the medicine I took when I was sick last year". The user knows the photo exists, but cannot recall when or where it was taken, which album it is in, or the exact words to search with.
+
+**This is NOT a general "improve search" project.** The engine must uncover:
+- How people remember old visual information (what they remember and what they forget)
+- Where the retrieval experience breaks down despite partial memory
+- Which retrieval problems are the biggest, most painful, most unresolved, and most addressable with AI
+
+**The engine must go beyond review summarization and sentiment analysis.** It must let me *identify and compare different retrieval problems and opportunity areas using evidence from real users*, and trace every insight to real user quotes.
+
+The engine is a deliverable I will submit publicly. Evaluators (non-technical product leaders) must be able to open a public link, understand it within 60 seconds, and test it without logging in. The engine is also my own working tool for choosing a target user segment and defining a problem, so it must support research decisions, not just display charts.
+
+*(Disclaimer: this is an independent portfolio project, not affiliated with Google. Do not use Google logos or imply endorsement.)*
+
+---
+
+## 2. The Analytical Frame the Engine Must Be Built Around
+
+### 2.1 Metric decomposition (the "retrieval funnel")
+Business metric: *successful retrieval of vaguely remembered photos.* Every relevant piece of evidence must be mapped to the funnel stage where retrieval broke:
+
+| Code | Stage | Question |
+|---|---|---|
+| F1 | Start | Does the user even begin a search (vs. giving up or scrolling manually)? |
+| F2 | Express | Can the user turn a fuzzy memory into a query? |
+| F3 | Understand | Does the product understand the clues given? |
+| F4 | Recognize | Can the user spot the right photo among the results (too many similar results, weak ranking, no useful previews)? |
+| F5 | Refine | After a miss, can the user improve the search (no way to say "not this, more like that")? |
+| F6 | Finish | Found it, but with friction (or found by luck / after long effort)? |
+| F0 | Out of scope | Not a retrieval failure (e.g., photo never backed up, deleted, account issue). Track as "adjacent" and quantify it separately. |
+
+A record may have a primary and a secondary stage.
+
+### 2.2 Memory lens (why retrieval fails despite partial memory)
+The engine must capture *how* people remember: by content, by context (who, why, occasion), by purpose (why they took it), by feeling, by approximate time, or by source (e.g., received on WhatsApp). This lets me test a core hypothesis: *users remember gist and context, while search expects precise labels and metadata (a vocabulary and format mismatch), and search is one-shot with no guided way to iterate.* The engine must be able to **support or refute** this with data, not assume it.
+
+### 2.3 Starting hypotheses (editable config, NOT forced labels)
+Ship these as `config/archetypes.yaml`. The engine must be able to confirm, merge, split, or reject them from data and report records that fit none:
+- A1: Fuzzy place/trip memory (e.g., a café on a trip)
+- A2: Utility or "life-admin" photos: screenshots, documents, medicine, receipts, whiteboards, IDs (remembered by purpose, not appearance)
+- A3: Received or forwarded media (WhatsApp etc.), where the user doesn't remember the source
+- A4: People and time (a child at a certain age, older relatives, old family photos)
+- A5: Text-in-image (a phone number, address, or quote the user remembers being in the photo)
+- A6: Needle in a haystack of near-duplicates or bursts
+- A7: Missing or hidden (archive, locked folder, trash, backup or cross-device gaps), which is adjacent and counted separately
+- A8: Friction with AI or conversational search itself (slow, unreliable, forced, cannot go back to classic search)
+
+---
+
+## 3. Data Collection Layer
+
+### 3.1 Sources (build each as a pluggable collector behind one interface)
+1. **Google Play Store reviews** for Google Photos (`com.google.android.apps.photos`), multiple countries/languages (at least `in`, `us`, `gb`, `au`, `ca`), sorted by newest and by relevance. Use `google-play-scraper` or equivalent.
+2. **Apple App Store reviews** (iTunes customer-reviews RSS/JSON feed or a maintained scraper), same countries.
+3. **Reddit**: r/googlephotos, r/GooglePixel, r/android, r/androidapps, r/degoogle, r/googlepixel, r/iphone, r/photography, r/DataHoarder, r/Backup, and keyword searches across Reddit. Use the official API (PRAW) with credentials.
+4. **Google Photos Community / Support forum** threads.
+5. **YouTube comments** (YouTube Data API v3) on videos about Google Photos search, Ask Photos, "how to find old photos", and Google Photos tips and tutorials.
+6. **Hacker News** (Algolia API) and **X/Twitter or Bluesky** as optional supplementary sources, if accessible.
+7. **Manual import**: CSV/JSON drop-in so I can add any source that blocks automated collection.
+
+### 3.2 Collector requirements
+- Query terms and subreddits/videos live in `config/sources.yaml`. Seed keyword sets should cover *retrieval-specific language* such as: "can't find old photo", "find a photo I remember", "search doesn't work", "can't find screenshot", "find photo from years ago", "search by date", "search by location", "Ask Photos", "no results", "wrong results", "photo disappeared", "can't remember when I took", "looking for a picture of", "searching for a photo of", plus Hindi/Hinglish variants.
+- Date range: from January 2023 to present, with emphasis on 2024 onward (the period of Ask Photos), so the engine can compare **before/after AI search** sentiment and problem types.
+- Store: source, URL, timestamp, rating (if any), app version/platform/country/language (if available), thread context (for Reddit/YouTube, store the parent post title and, when a reply is analyzed, its parent text for context).
+- **Ethics and compliance:** public content only; respect robots.txt, ToS, and rate limits; no logins or private groups; hash or drop usernames (store only a salted hash for dedup); no personal data in the deployed dataset; keep quotes short and always link back to the source.
+- **Resilience:** cache every raw response to disk; make collection resumable and idempotent. **The deployed public app must never depend on live scraping.** Ship a precomputed dataset snapshot with a collection date stamp.
+- **Scale target:** 3,000–8,000 raw items, yielding roughly 800–2,000 retrieval-relevant records after filtering. Report the actual funnel: raw → deduplicated → relevant → extracted.
+
+### 3.3 Cleaning
+Language detection; translate non-English (including Hindi/Hinglish) to English while *keeping the original text*; deduplicate (exact + near-duplicate via embeddings); remove spam, bots, and content-free reviews ("good app", "nice"); normalize text; keep the full raw item for traceability.
+
+---
+
+## 4. LLM Analysis Pipeline
+
+### 4.1 Stage A: Relevance filter (cheap and fast)
+Two steps: (1) keyword/regex pre-filter for recall; (2) a small, fast LLM classifier returning `retrieval_related` (yes / adjacent / no), a confidence score, and a one-line reason. Lean toward keeping borderline items ("adjacent") so they can be examined and excluded later.
+
+### 4.2 Stage B: Structured extraction (the core)
+For each relevant item, a stronger LLM returns **strictly validated JSON** (use structured output/tool-calling with a schema and validate with Pydantic or Zod). The rules:
+- **Extract only what the text states or clearly implies. Use `"not_stated"` instead of guessing.** Do not infer memory clues that the user did not mention.
+- Every `evidence_quote` must be a **verbatim substring** of the source text (max 25 words). Validate programmatically and reject or retry outputs where it isn't.
+- Numbers (counts, percentages) are **never produced by the LLM**. They are always computed in code from the structured data.
+
+Schema (extend where useful):
+
+```json
+{
+  "record_id": "string",
+  "source": "play_store|app_store|reddit|community|youtube|hn|other",
+  "url": "string",
+  "date": "YYYY-MM-DD",
+  "rating": "int|null",
+  "language_original": "string",
+  "retrieval_related": "yes|adjacent|no",
+
+  "scenario": {
+    "target_type": "trip_travel|event_celebration|person_family|child_growth|pet|screenshot|document_id_receipt|medical_health|whiteboard_notes|received_media|video|food_place|product_shopping|work_study|nostalgia_old|other|not_stated",
+    "target_age": "days|weeks|months|about_1_year|several_years|not_stated",
+    "vagueness_level": "0_exact_known|1_some_clues|2_few_clues|3_only_feelings",
+    "archetype": "A1..A8|new_candidate|none",
+    "description_mode": ["content","context","purpose","feeling","time","source"]
+  },
+
+  "memory": {
+    "remembered": [{"clue_type": "time_approx|place|person|object|activity_event|visual_appearance|text_in_image|emotion_occasion|source_app|device_camera|companion|sequence_before_after|purpose", "value": "verbatim or short", "confidence": "certain|hunch|unclear"}],
+    "forgotten": ["time_exact|place|person|album|filename|keywords|date|source|other"]
+  },
+
+  "search_attempts": [{"query": "verbatim", "style": "keyword|natural_language|person_filter|place|date|category_filter|combination|other", "result": "no_results|wrong_results|too_many|partial|success|not_stated"}],
+
+  "failure": {
+    "primary_stage": "F0|F1|F2|F3|F4|F5|F6|none",
+    "secondary_stage": "F0..F6|none",
+    "mechanism": ["vocabulary_mismatch","missing_or_wrong_metadata","date_confusion_upload_vs_taken","text_in_image_not_indexed","face_grouping_error","irrelevant_ranking","too_many_similar_results","no_refine_or_negative_feedback","ai_search_slow_or_unreliable","cannot_return_to_classic_search","not_backed_up_or_hidden","received_media_missing","cross_device_inconsistency","few_results_returned","other"]
+  },
+
+  "workarounds": ["scroll_by_date","search_other_apps","ask_someone","use_albums_or_favorites","use_memories","use_maps_timeline","use_desktop_or_takeout","switch_to_other_photo_app","toggle_classic_search","gave_up","other"],
+  "outcome": "found_quickly|found_after_effort|found_by_luck|not_found|not_stated",
+  "effort_signal": "string|null",
+  "emotion": {"type": "frustration|anxiety_urgency|sadness_nostalgia|anger|resignation|neutral|delight", "intensity": 1},
+  "stakes": "sentimental|practical|financial_legal_medical|low|not_stated",
+  "user_context": {"library_size_hint": "string|null", "platform": "android|ios|web|not_stated", "life_context": "parent|traveler|student|professional|other|not_stated"},
+  "feature_requests": ["verbatim wish"],
+  "product_mentions": ["ask_photos","classic_search","memories","locked_folder","archive","albums","other"],
+  "evidence_quotes": [{"text": "verbatim <=25 words", "start_char": 0, "end_char": 0}],
+  "extraction_confidence": 0.0,
+  "notes": "string"
+}
+```
+
+### 4.3 Model and cost settings
+- The provider must be **pluggable** via env vars (Anthropic Claude or Google Gemini): a small fast model for Stage A, a stronger model for Stage B. Default suggestion: a Haiku/Flash-class model for filtering and a Sonnet/Pro-class model for extraction.
+- Batch requests, cache by content hash (never pay twice for the same item), retry with backoff, log tokens and cost, and **show an estimated cost before any full run** with a configurable spending cap.
+- Version every prompt (`prompts/v1/...`) and log which prompt version produced each record.
+- Prompts must include few-shot examples drawn from realistic (synthetic) cases, including tricky ones: sarcasm, multi-issue reviews, non-retrieval complaints, Hinglish text.
+
+### 4.4 Stage C: Embeddings and unsupervised discovery
+- Embed each record's cleaned text with one API-based embedding model (configurable; store the model name with the vectors).
+- Reduce dimensions (UMAP) and cluster (HDBSCAN). Have an LLM name and describe each cluster from its most representative records (with exemplar quotes).
+- **Compare discovered clusters to the archetypes** and flag *novel clusters* the taxonomy missed. This is a key output: things I didn't think of.
+
+---
+
+## 5. Analysis Modules (all numbers computed deterministically in code)
+
+1. **Funnel leak analysis:** share of records by failure stage, overall and by scenario, source, period, and platform; a scenario × stage heatmap.
+2. **Remembered vs. forgotten:** frequency of each clue type as remembered vs. forgotten, split by photo type; clue confidence; which clues co-occur; "when people forget X, what do they still remember?"
+3. **Query Lab:** how people phrase searches under incomplete memory: style distribution, query length, success rate by style, and a "vocabulary mismatch" table (what the user typed vs. what they meant, with quotes).
+4. **Opportunity scoring:** for each problem archetype (scenario × failure stage/mechanism):
+   `Score = w1*Frequency + w2*Severity + w3*Unresolved + w4*AI_Addressability + w5*Strategic_Fit`
+   - Frequency = share of relevant records (normalized 0–100)
+   - Severity = emotion intensity × stakes weight
+   - Unresolved = P(not_found) + 0.5 × P(found_after_effort or found_by_luck)
+   - AI_Addressability and Strategic_Fit = rubric-based LLM rating that is **clearly labelled "judgment, not data"** and overridable by me
+   - Default weights 25/25/20/20/10, adjustable with sliders, with a **rank-stability (sensitivity) indicator**
+   - Show bootstrap confidence intervals, and mark anything with n < 15 as "low evidence"
+5. **Compare mode:** select any two archetypes, segments, or clusters and compare side by side (volume, funnel profile, remembered/forgotten clues, workarounds, emotions, outcomes, top quotes). This directly serves the requirement to compare different retrieval problems.
+6. **Hypothesis Court:** I type a hypothesis in plain language (e.g., "Users remember the purpose of a screenshot but not when they took it"). The system retrieves evidence, then returns **Supports / Contradicts / Insufficient evidence**, with counts, a strength rating, and the strongest quotes on each side. It must not just agree with me. It must actively seek counter-evidence.
+7. **Trend and Ask Photos impact:** how problem mix and emotion changed before and after AI search rollout (mention volume and sentiment for A8 and other archetypes over time).
+8. **Segment lens:** slice by life context, platform, and library-size hints, so I can choose a target segment with evidence.
+9. **Research gaps and interview kit:** for each top opportunity, list what the data *cannot* tell me (e.g., "why did they choose this query?") and auto-generate 5 behavioral interview probes and a suggested live retrieval task. This connects the engine to my later primary research.
+10. **Coverage and bias panel:** source mix, rating distribution, time range, language mix, sample sizes, and a clear statement of known biases (negative-skewed reviews, power-user-skewed Reddit, non-representative sample).
+
+---
+
+## 6. Conversational Evidence Layer ("Ask the Evidence")
+
+- A grounded chat agent with these tools: `sql_query` (structured aggregations over the extracted data), `semantic_search` (vector retrieval over records), `get_cluster`, `compare_segments`, `get_quotes`.
+- Every claim in an answer must carry inline citation chips (`[#record_id]`) that open the source record in an evidence drawer. Numbers must come from tool results, not the model.
+- If the evidence is thin, the agent says so and says what would be needed. Never fabricate or "smooth over" quotes. Validate all quotes against the stored text before display.
+- Streaming responses, suggested follow-ups, and a set of starter questions.
+- The engine must answer these acceptance-test questions well:
+  1. What kinds of old photos do users struggle to retrieve?
+  2. What do people actually remember about a photo they can't find, and what have they forgotten?
+  3. How do users phrase searches when their memory is incomplete?
+  4. Which funnel stage fails most for each photo type?
+  5. Which retrieval problems are most severe and least resolved?
+  6. What workarounds do people use, and what do they reveal about unmet needs?
+  7. How did complaints change after AI search (Ask Photos) launched?
+  8. Where do users struggle to *recognize* the right photo among results?
+  9. What do users explicitly wish the product would do?
+
+## 7. Live "Try It" Mode
+A judge can paste a review or a Reddit/YouTube URL (or choose a sample), and the engine runs the real pipeline live (filter → extract) and shows: the structured record card, the funnel stage it maps to, the memory clues found, and the most similar existing evidence. Include rate limiting, a per-session budget cap, input length limits, a prompt-injection defense (treat pasted text strictly as data, never as instructions), and graceful error states.
+
+---
+
+## 8. Quality and Evaluation (a visible trust feature)
+
+- Build an in-app **labeling tool** with keyboard shortcuts, so I can hand-label a stratified gold set (100–150 records) for: relevance, target_type, failure stage, and outcome.
+- Compute and display: precision/recall/F1 for relevance, accuracy and a confusion matrix for failure stage and target type, Cohen's kappa between me and the model, and run-to-run consistency (same items processed twice).
+- Targets: relevance F1 ≥ 0.90, failure-stage accuracy ≥ 0.75, quote validity = 100%.
+- Show results on the "Method and Trust" page, along with the prompts, schema, limitations, and ethics notes.
+- Add unit tests for the scoring logic, quote validation, schema validation, and deduplication.
+
+---
+
+## 9. Technical Architecture (defaults; propose alternatives only if you justify them)
+
+- **Pipeline:** Python 3.11 scripts (pandas/DuckDB, Pydantic, umap-learn, hdbscan, scikit-learn), run locally, producing versioned artifacts (Parquet + JSON).
+- **App:** Next.js (App Router) + TypeScript + Tailwind + shadcn/ui; charts with Recharts/visx/D3; UMAP map rendered with canvas or WebGL for smoothness.
+- **Data in the app:** precomputed JSON/SQLite/Parquet plus in-memory vector search (dataset is small). API routes only for chat, Try It, and query embedding.
+- **Hosting:** free-tier deployable (e.g., Vercel), public URL, **no login required**, keys stored server-side only, CORS/rate-limit protected.
+- **Reproducibility:** one command each for `collect`, `clean`, `filter`, `extract`, `embed`, `cluster`, `score`, `build`; a Makefile or task runner; seeded random states.
+- **Performance:** first meaningful load < 3 s; chart interactions < 300 ms; chat streaming starts < 2 s.
+
+---
+
+## 10. UI/UX Specification
+
+### 10.1 Design principles
+1. **Evidence-first:** every number, bar, and cell is clickable and opens the underlying quotes ("Insight → Evidence → Source").
+2. **Story before dashboard:** lead with the answer, then let people explore. Each chart has a one-line "so what" caption, with numbers generated deterministically.
+3. **Progressive disclosure:** simple by default, powerful on demand. Avoid dashboard clutter.
+4. **Calm, analytical, editorial** tone: generous whitespace, clear hierarchy, no gimmicks.
+5. **Honest about uncertainty:** always show n, confidence, and "low evidence" flags.
+
+### 10.2 Information architecture
+1. **Overview:** headline findings (3–5 insight cards), the interactive funnel with leak sizes, dataset coverage stats, a "Take the 60-second tour" guide.
+2. **Funnel Explorer:** funnel view plus scenario × stage heatmap; click any cell to open evidence.
+3. **Memory Map:** remembered vs. forgotten clues by photo type; **Query Lab** with query styles and the vocabulary-mismatch table.
+4. **Opportunity Board:** ranked archetypes with stacked score breakdown, weight sliders, sensitivity indicator, and **Compare mode**; buttons to open the research-gap and interview kit.
+5. **Discovery Map:** 2D cluster scatter with hover previews, cluster labels, "novel vs. known" toggle, filters.
+6. **Hypothesis Court.**
+7. **Ask the Evidence** (chat).
+8. **Try It Live.**
+9. **Evidence Library:** filterable, searchable feed/table of all records with facets; pin quotes into a "Deck Collection"; export CSV; "Copy insight for slide" (text + numbers + citation) and "Download chart as PNG/SVG."
+10. **Method & Trust:** pipeline diagram, prompts, schema, evaluation results, limitations, ethics. Also offer an **export of the workflow diagram as a clean SVG/PNG** (I need it for a one-slide explanation).
+
+### 10.3 Global interaction
+- A persistent filter bar (source, date range, rating, language, platform, archetype, confidence threshold) synced to URL params, so any view is a shareable link.
+- A right-hand **Evidence Drawer** with quote, source link, structured tags, and a "why this tag" explanation.
+- Tooltips defining every metric; keyboard navigation; command palette (Cmd/Ctrl-K) for jumping between views and running searches.
+- Loading skeletons, meaningful empty states, and error states with recovery options.
+
+### 10.4 Visual design and accessibility (strict)
+- **Color-blind-safe palette** (e.g., Okabe–Ito or a similarly validated one). **Never rely on color alone**; add labels, shapes, patterns, or icons.
+- WCAG AA contrast minimum, visible focus states, light and dark themes.
+- Base body text ≥ 16 px, and nothing smaller than 14 px anywhere.
+- One clean sans-serif family (e.g., Inter) with a consistent type scale, an 8-px spacing grid, and consistent component styles.
+- Desktop-first, fully usable on tablet and mobile (no horizontal scrolling of the page body; wide tables scroll in their own container).
+- Subtle motion only (respect `prefers-reduced-motion`).
+
+---
+
+## 11. Guardrails and Non-Goals
+- No generic sentiment dashboards and no word clouds as "insights."
+- No LLM-generated statistics; no unverifiable quotes; no claims of statistical representativeness.
+- No dependence on live scraping in the public demo; no logins or paywalls.
+- No storage of personal data or usernames.
+- Do not force data into my starting hypotheses. Where the data disagrees, surface that prominently.
+
+---
+
+## 12. Repository and Documentation
+Deliver a clean repo with: `README` (what/why/how to run/deploy), architecture diagram, `.env.example`, `config/` (sources, archetypes, weights), `prompts/` (versioned), `pipeline/`, `app/`, `data/` (snapshot + data dictionary), `eval/` (gold set and reports), `tests/`, and a 3-minute demo script for evaluators.
+
+## 13. Sample Data Requirement
+Include a ready-to-use precomputed dataset so the deployed app is fully functional on day one, even if collectors are blocked. Clearly label real vs. sample data if any synthetic examples are used, and never present synthetic data as real user evidence.
+
+## 14. Definition of Done (acceptance checklist)
+- [ ] Public URL works with no login; loads fast; works on mobile
+- [ ] At least 3 sources collected, with 800+ relevant extracted records (or an honest, documented explanation and plan if fewer)
+- [ ] Every record maps to a funnel stage and includes verified verbatim quotes
+- [ ] Funnel Explorer, Memory Map + Query Lab, Opportunity Board (with Compare mode and sliders), Discovery Map, Hypothesis Court, Ask the Evidence, Try It Live, Evidence Library, and Method & Trust all work
+- [ ] Chat answers all nine acceptance-test questions with citations and computed numbers
+- [ ] Evaluation results (precision/recall/kappa/consistency) are displayed
+- [ ] Every chart is clickable to evidence; every insight has n and confidence
+- [ ] Color-blind-safe, WCAG AA, min font 14 px
+- [ ] Workflow diagram export available (SVG/PNG)
+- [ ] README, tests, and cost/usage logging complete
+
+## 15. Build Phases (pause for my review after each)
+0. **Plan:** architecture, stack, schema, risks, cost estimate (await approval)
+1. **Data:** collectors, cleaning, a 200-item sample through Stage A and B; show me the outputs to check quality
+2. **Evaluation:** labeling tool, gold set, first accuracy report; tune prompts
+3. **Full run:** filtering, extraction, embeddings, clustering, scoring
+4. **Analytics:** all analysis modules with tests
+5. **UI/UX:** design system, all pages, evidence drawer, filters
+6. **Chat and Try It:** RAG agent, citations, safety, budget caps
+7. **Polish and deploy:** performance, accessibility audit, docs, public deployment, demo script
+
+Ask me for API keys or decisions only when needed for the current phase, and list any assumptions you make.

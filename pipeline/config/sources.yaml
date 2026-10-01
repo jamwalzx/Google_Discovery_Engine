@@ -1,0 +1,38 @@
+date_range:
+  start: "2023-01-01"
+
+keywords:
+  - "can't find old photo"
+  - "find a photo I remember"
+  - "search doesn't work"
+  - "can't find screenshot"
+  - "find photo from years ago"
+  - "search by date"
+  - "search by location"
+  - "Ask Photos"
+  - "no results"
+  - "wrong results"
+  - "photo disappeared"
+  - "can't remember when I took"
+  - "looking for a picture of"
+  - "searching for a photo of"
+
+subreddits:
+  - "googlephotos"
+  - "GooglePixel"
+  - "android"
+  - "androidapps"
+  - "degoogle"
+  - "googlepixel"
+  - "iphone"
+  - "photography"
+  - "DataHoarder"
+  - "Backup"
+
+play_store:
+  app_id: "com.google.android.apps.photos"
+  countries: ["us", "in", "gb", "au", "ca"]
+
+app_store:
+  app_id: "962194608" # Google Photos iOS ID
+  countries: ["us", "in", "gb", "au", "ca"]
