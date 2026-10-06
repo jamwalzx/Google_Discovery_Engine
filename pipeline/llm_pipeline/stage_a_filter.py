@@ -1,17 +1,10 @@
 import os
 import json
-from google import genai
-from google.genai import types
-from pydantic import BaseModel, Field
+from groq import Groq
 from dotenv import load_dotenv
 
-class StageAOutput(BaseModel):
-    retrieval_related: str = Field(description="Must be 'yes', 'adjacent', or 'no'")
-    confidence: float = Field(description="Confidence score between 0.0 and 1.0")
-    reason: str = Field(description="Short reason for classification")
-
 def run_stage_a(input_file="data/cleaned/cleaned_dataset.json", output_file="data/llm_output/stage_a_filtered.json"):
-    print("=== Running Stage A: Relevance Filter ===")
+    print("=== Running Stage A: Relevance Filter (via Groq) ===")
     load_dotenv()
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     
@@ -19,17 +12,18 @@ def run_stage_a(input_file="data/cleaned/cleaned_dataset.json", output_file="dat
         print(f"Error: {input_file} not found.")
         return []
         
+    # SLICED TO 200 FOR SPEED
     with open(input_file, "r", encoding="utf-8") as f:
-        data = json.load(f)
+        data = json.load(f)[:200]
         
     prompt_path = "prompts/v1/stage_a_filter.md"
     with open(prompt_path, "r", encoding="utf-8") as f:
         system_instruction = f.read()
 
-    client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
     
-    # We use gemini-1.5-flash for Stage A (Fast/Cheap)
-    model = 'gemini-1.5-flash'
+    # We use llama3-8b-8192 for Stage A (Fast/Cheap)
+    model = 'openai/gpt-oss-20b'
     
     filtered_data = []
     
@@ -40,18 +34,17 @@ def run_stage_a(input_file="data/cleaned/cleaned_dataset.json", output_file="dat
             continue
             
         try:
-            response = client.models.generate_content(
+            response = client.chat.completions.create(
                 model=model,
-                contents=text,
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction,
-                    response_mime_type="application/json",
-                    response_schema=StageAOutput,
-                    temperature=0.1
-                )
+                messages=[
+                    {"role": "system", "content": system_instruction},
+                    {"role": "user", "content": text}
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.1
             )
             
-            result = json.loads(response.text)
+            result = json.loads(response.choices[0].message.content)
             item["stage_a"] = result
             
             if result.get("retrieval_related") in ["yes", "adjacent"]:

@@ -17,22 +17,13 @@ keywords:
   - "looking for a picture of"
   - "searching for a photo of"
 
-subreddits:
-  - "googlephotos"
-  - "GooglePixel"
-  - "android"
-  - "androidapps"
-  - "degoogle"
-  - "googlepixel"
-  - "iphone"
-  - "photography"
-  - "DataHoarder"
-  - "Backup"
+# subreddits:
+#   - "googlephotos"
 
 play_store:
   app_id: "com.google.android.apps.photos"
-  countries: ["us", "in", "gb", "au", "ca"]
+  countries: ["in"]
 
-app_store:
-  app_id: "962194608" # Google Photos iOS ID
-  countries: ["us", "in", "gb", "au", "ca"]
+# app_store:
+#   app_id: "962194608" # Google Photos iOS ID
+#   countries: ["us", "in", "gb", "au", "ca"]

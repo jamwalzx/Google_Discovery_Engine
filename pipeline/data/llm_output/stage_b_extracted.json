@@ -1,0 +1,1608 @@
+[
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=88b6e64d-5996-41b3-a4fc-3df04e0fc430",
+    "date": "2026-10-05",
+    "rating": 4,
+    "language_original": "en",
+    "original_text": "was better before they implemented AI. Now you have to be more descriptive in trying to find a particular photo in your search.",
+    "country": "us",
+    "translated_text": "was better before they implemented AI. Now you have to be more descriptive in trying to find a particular photo in your search.",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.9,
+      "reason": "User is explicitly discussing difficulty finding a specific photo due to search changes."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "2_few_clues",
+        "archetype": "A8",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F2",
+        "secondary_stage": "none",
+        "mechanism": [
+          "vocabulary_mismatch"
+        ]
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "was better before they implemented AI. Now you have to be more descriptive in trying to find a particular photo in your search.",
+          "start_char": 0,
+          "end_char": 126
+        }
+      ],
+      "extraction_confidence": 0.95,
+      "notes": "User mentions AI made search harder, needing more descriptive queries; no concrete photo details provided."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8ba642a1-416a-4f52-aeb6-f22238c50c08",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "update has made it horrible. edited pictures are saved far away in the sequence and it's impossible to locate them. edit options are placed absurdly.",
+    "country": "us",
+    "translated_text": "update has made it horrible. edited pictures are saved far away in the sequence and it's impossible to locate them. edit options are placed absurdly.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports difficulty locating edited photos due to changes in organization, not a specific memory-based search issue."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "not_stated",
+        "vagueness_level": "1_some_clues",
+        "archetype": "A6",
+        "description_mode": [
+          "content",
+          "context"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "location_in_sequence",
+            "value": "far away in the sequence",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": [
+          "time_exact",
+          "place",
+          "filename",
+          "keywords",
+          "date"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F2",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "edited pictures are saved far away in the sequence and it's impossible to locate them.",
+          "start_char": 29,
+          "end_char": 114
+        },
+        {
+          "text": "edit options are placed absurdly.",
+          "start_char": 116,
+          "end_char": 148
+        }
+      ],
+      "extraction_confidence": 0.96,
+      "notes": "User complains that after an update edited photos are stored far from originals, making them hard to find; UI placement of edit options is also criticized."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=4447c1b9-4a8f-4a69-b7c2-02716f70dbe5",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "I am not worried about preserving my memories.Even when I have a new phone,all I need is to open my email on my new phone and voila!, the photos upload.",
+    "country": "us",
+    "translated_text": "I am not worried about preserving my memories.Even when I have a new phone,all I need is to open my email on my new phone and voila!, the photos upload.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User discusses automatic photo upload to email, not searching for a specific remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "not_stated",
+        "vagueness_level": "0_exact_known",
+        "archetype": "A2",
+        "description_mode": [
+          "source",
+          "purpose"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "source",
+            "value": "email",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [
+        "open email on new phone to upload photos"
+      ],
+      "outcome": "found_quickly",
+      "emotion": {
+        "type": "neutral",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "I am not worried about preserving my memories.",
+          "start_char": 0,
+          "end_char": 45
+        },
+        {
+          "text": "all I need is to open my email on my new phone and voila!, the photos upload.",
+          "start_char": 75,
+          "end_char": 151
+        }
+      ],
+      "extraction_confidence": 0.95,
+      "notes": "User relies on email backup for photos and expresses no concern about preserving memories."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=f20c6bf7-c907-40fc-a5c3-40c8b8c212f1",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "as of 2026 the photos merge instead of separating the dates this app need to be updated",
+    "country": "us",
+    "translated_text": "as of 2026 the photos merge instead of separating the dates this app need to be updated",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User complains about photos merging by date, an organization issue rather than a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "not_stated",
+        "vagueness_level": "0_exact_known",
+        "archetype": "none",
+        "description_mode": [
+          "content",
+          "time"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "behavior",
+            "value": "photos merge instead of separating dates",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "as of 2026 the photos merge instead of separating the dates this app need to be updated",
+          "start_char": 0,
+          "end_char": 87
+        }
+      ],
+      "extraction_confidence": 0.96,
+      "notes": "User reports that photos are merged across dates, expects separation by date."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=242a2ed0-821d-4273-b681-863d74d84f9c",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "Why can't you access your locked videos and pictures from your second device",
+    "country": "us",
+    "translated_text": "Why can't you access your locked videos and pictures from your second device",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is discussing access to locked media on a second device, which involves retrieval but not a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "not_stated",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "neutral",
+        "intensity": 0
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [],
+      "extraction_confidence": 0.0,
+      "notes": "No user feedback provided."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=cfb40601-5015-40f2-bbc5-1690c4f68cdb",
+    "date": "2026-10-05",
+    "rating": 3,
+    "language_original": "af",
+    "original_text": "ye aap se photos delete nahi hote",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] ye aap se photos delete nahi hote",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User complains about photos not being deleted, indicating a photo management issue rather than a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "none",
+        "description_mode": [
+          "content"
+        ]
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "neutral",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "ye aap se photos delete nahi hote",
+          "start_char": 0,
+          "end_char": 33
+        }
+      ],
+      "extraction_confidence": 0.9,
+      "notes": "User asserts photos are not deleted; no further context provided."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=15b344bc-1d34-4a8a-aa2b-387bc3c27b3b",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "The app is good, I still saw my 5years picture after changing diff phone.",
+    "country": "us",
+    "translated_text": "The app is good, I still saw my 5years picture after changing diff phone.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User mentions seeing a photo after changing phones, indicating backup/sync context rather than a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "nostalgia_old",
+        "target_age": "several_years",
+        "vagueness_level": "0_exact_known",
+        "archetype": "none",
+        "description_mode": [
+          "feeling",
+          "time"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "time",
+            "value": "5 years",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "found_quickly",
+      "emotion": {
+        "type": "delight",
+        "intensity": 1
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "The app is good, I still saw my 5years picture after changing diff phone.",
+          "start_char": 0,
+          "end_char": 73
+        }
+      ],
+      "extraction_confidence": 0.95,
+      "notes": ""
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=75b75bc9-fe81-4bbb-a3bd-4bdffc8ce50d",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "The folder and file system is absolutely awful. I feel like I never know how to find my photos. Folders? Albums? Sometimes I try to move things but it fails? 3P apps are rarely integrated so sharing photos becomes a hassle.",
+    "country": "us",
+    "translated_text": "The folder and file system is absolutely awful. I feel like I never know how to find my photos. Folders? Albums? Sometimes I try to move things but it fails? 3P apps are rarely integrated so sharing photos becomes a hassle.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about poor folder/album organization and difficulty locating photos, which is related to retrieval but not a specific search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "not_stated",
+        "vagueness_level": "2_few_clues",
+        "archetype": "A7",
+        "description_mode": [
+          "context",
+          "purpose",
+          "feeling",
+          "source"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "folder_structure",
+            "value": "folders and albums",
+            "confidence": "certain"
+          },
+          {
+            "clue_type": "third_party_apps",
+            "value": "3P apps rarely integrated",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": [
+          "time_exact",
+          "place",
+          "person",
+          "filename",
+          "keywords",
+          "date",
+          "album"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F2",
+        "secondary_stage": "none",
+        "mechanism": [
+          "vocabulary_mismatch"
+        ]
+      },
+      "workarounds": [
+        "manually moving files"
+      ],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "practical",
+      "evidence_quotes": [
+        {
+          "text": "The folder and file system is absolutely awful.",
+          "start_char": 0,
+          "end_char": 46
+        },
+        {
+          "text": "I feel like I never know how to find my photos.",
+          "start_char": 48,
+          "end_char": 94
+        },
+        {
+          "text": "Folders? Albums?",
+          "start_char": 96,
+          "end_char": 111
+        },
+        {
+          "text": "3P apps are rarely integrated so sharing photos becomes a hassle.",
+          "start_char": 157,
+          "end_char": 221
+        }
+      ],
+      "extraction_confidence": 0.92,
+      "notes": "User complains about disorganized folder/file system, inability to locate photos, and poor integration of third‑party apps, leading to frustration."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=70b51783-e828-4304-9758-2cbf4d8a4ed3",
+    "date": "2026-10-05",
+    "rating": 2,
+    "language_original": "en",
+    "original_text": "This app is not very good for organizing photos. While there are albums, it's not really designed to segregate specific photos easily for sharing. It seems designed more for Google to farm your pictures.",
+    "country": "us",
+    "translated_text": "This app is not very good for organizing photos. While there are albums, it's not really designed to segregate specific photos easily for sharing. It seems designed more for Google to farm your pictures.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User discusses photo organization and album segregation, not a specific search or memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "none",
+        "description_mode": [
+          "purpose",
+          "context"
+        ]
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "This app is not very good for organizing photos.",
+          "start_char": 0,
+          "end_char": 47
+        },
+        {
+          "text": "it's not really designed to segregate specific photos easily for sharing.",
+          "start_char": 73,
+          "end_char": 145
+        },
+        {
+          "text": "It seems designed more for Google to farm your pictures.",
+          "start_char": 147,
+          "end_char": 202
+        }
+      ],
+      "extraction_confidence": 0.98,
+      "notes": "User complains about poor organization features and perceived privacy motive."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=eb30678f-e5ea-4f34-a635-6b62b600caf2",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "whole album disappeared",
+    "country": "us",
+    "translated_text": "whole album disappeared",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports an entire album missing, indicating a retrieval issue but not a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "A7",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": [
+          "album"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F0",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "whole album disappeared",
+          "start_char": 0,
+          "end_char": 23
+        }
+      ],
+      "extraction_confidence": 0.95,
+      "notes": "User reports that an entire album is missing and provides no search attempt or further context."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=53525c83-cd38-4138-9daf-e13152ada108",
+    "date": "2026-10-05",
+    "rating": 4,
+    "language_original": "no",
+    "original_text": "by mistak moblie restore my some videos photos hiden old my data lost",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] by mistak moblie restore my some videos photos hiden old my data lost",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User reports lost or hidden photos, indicating a retrieval issue but not explicitly describing a search or memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "nostalgia_old",
+        "target_age": "not_stated",
+        "vagueness_level": "2_few_clues",
+        "archetype": "A7",
+        "description_mode": [
+          "content",
+          "context"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "content",
+            "value": "videos photos",
+            "confidence": "hunch"
+          },
+          {
+            "clue_type": "source",
+            "value": "mobile restore",
+            "confidence": "unclear"
+          }
+        ],
+        "forgotten": [
+          "place",
+          "time",
+          "album",
+          "filename"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F1",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "by mistak moblie restore my some videos photos hiden old my data lost",
+          "start_char": 0,
+          "end_char": 68
+        }
+      ],
+      "extraction_confidence": 0.8,
+      "notes": "User reports accidental mobile restore caused hidden old videos/photos to be lost; no explicit search attempt described."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=e9010ae7-fac2-4e9e-b95b-f493a599bfc3",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Horrible! I had all setup MY WAY. NOW, just ALL mixed up. Play music, decide move my photos to weird places. Certainly DO NOT WANT AUTO LOCATION SHOWN OF OVER 350 Photos! Incorrect mostly. I AM NOT 14-25 YEARS OLD. I USE FOR BUSINESS ALOT. I DO NOT WANT ALL THESE USELESS BELLS & WHISTLES! WHAT A HUGE WASTE OF MY TIME TO UNDO THIS GARBAGE.",
+    "country": "us",
+    "translated_text": "Horrible! I had all setup MY WAY. NOW, just ALL mixed up. Play music, decide move my photos to weird places. Certainly DO NOT WANT AUTO LOCATION SHOWN OF OVER 350 Photos! Incorrect mostly. I AM NOT 14-25 YEARS OLD. I USE FOR BUSINESS ALOT. I DO NOT WANT ALL THESE USELESS BELLS & WHISTLES! WHAT A HUGE WASTE OF MY TIME TO UNDO THIS GARBAGE.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about photos being moved to wrong locations and auto‑location issues, which is an organization problem rather than a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "work_study",
+        "target_age": "not_stated",
+        "vagueness_level": "1_some_clues",
+        "archetype": "A2",
+        "description_mode": [
+          "purpose",
+          "context",
+          "content"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "auto_location_error",
+            "value": "over 350 photos shown incorrectly",
+            "confidence": "certain"
+          },
+          {
+            "clue_type": "business_use",
+            "value": "uses for business a lot",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": [
+          "time_exact",
+          "place",
+          "person",
+          "album",
+          "filename",
+          "keywords",
+          "date",
+          "source",
+          "other"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F3",
+        "secondary_stage": "none",
+        "mechanism": [
+          "vocabulary_mismatch"
+        ]
+      }
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=c8fec8b4-5532-4cc7-92db-06f7aae007f4",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "tl",
+    "original_text": "all photos Anand karaganni",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] all photos Anand karaganni",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.8,
+      "reason": "User is trying to locate all photos of a specific person, indicating a search/memory retrieval issue."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "person_family",
+        "target_age": "not_stated",
+        "vagueness_level": "1_some_clues",
+        "archetype": "A4",
+        "description_mode": [
+          "content"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "person_name",
+            "value": "Anand karaganni",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": [
+          "time_exact",
+          "place",
+          "album",
+          "filename",
+          "keywords",
+          "date",
+          "source"
+        ]
+      },
+      "search_attempts": [
+        {
+          "query": "all photos Anand karaganni",
+          "style": "keyword",
+          "result": "not_stated"
+        }
+      ],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "not_stated",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "all photos Anand karaganni",
+          "start_char": 0,
+          "end_char": 26
+        }
+      ],
+      "extraction_confidence": 0.8,
+      "notes": "User provides only a name-based request; no explicit indication of search success or emotional reaction."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8e98ad7c-3535-48d2-8601-de2baaa09fe2",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "totally deleted all my albums that took 10 years to make",
+    "country": "us",
+    "translated_text": "totally deleted all my albums that took 10 years to make",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports deleting albums, indicating missing photos, but does not mention searching for a specific remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "several_years",
+        "vagueness_level": "1_some_clues",
+        "archetype": "A7",
+        "description_mode": [
+          "content",
+          "context"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "time",
+            "value": "10 years",
+            "confidence": "certain"
+          }
+        ],
+        "forgotten": [
+          "album"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F1",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "totally deleted all my albums that took 10 years to make",
+          "start_char": 0,
+          "end_char": 56
+        }
+      ],
+      "extraction_confidence": 0.92,
+      "notes": "User reports deletion of all albums spanning a decade; no search attempt described."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=2fceed12-07d7-4971-a7cf-3dd064da2ffe",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Thousands of my photos were deleted!!!!",
+    "country": "us",
+    "translated_text": "Thousands of my photos were deleted!!!!",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports missing photos, indicating a retrieval issue but not explicitly about searching for a remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F1",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 5
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "Thousands of my photos were deleted!!!!",
+          "start_char": 0,
+          "end_char": 39
+        }
+      ],
+      "extraction_confidence": 0.95,
+      "notes": ""
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8fce4b5e-50d7-404f-a3a4-e7d13705bd86",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "where are my screenshots ? they are they not populating in the order I configured ? why are there so many folders labelled screenshots for this device ? I'm so sick of thus and it's costing me my job my livelyhood and my means of getting by you know eating and paying bills nothing can be accomplished and myself and a group of phychologists always trace it back to some data we relied on this paid for service to supply actually just hijacks it off the device and away from the owner but avail2etal",
+    "country": "us",
+    "translated_text": "where are my screenshots ? they are they not populating in the order I configured ? why are there so many folders labelled screenshots for this device ? I'm so sick of thus and it's costing me my job my livelyhood and my means of getting by you know eating and paying bills nothing can be accomplished and myself and a group of phychologists always trace it back to some data we relied on this paid for service to supply actually just hijacks it off the device and away from the owner but avail2etal",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.9,
+      "reason": "User is explicitly asking where their screenshots are and complaining about missing or misordered screenshots, indicating a photo retrieval issue."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "screenshot",
+        "target_age": "not_stated",
+        "vagueness_level": "1_some_clues",
+        "archetype": "A2",
+        "description_mode": [
+          "content",
+          "context",
+          "purpose"
+        ]
+      },
+      "memory": {
+        "remembered": [
+          {
+            "clue_type": "folder_label",
+            "value": "screenshots",
+            "confidence": "certain"
+          },
+          {
+            "clue_type": "order_setting",
+            "value": "configured order",
+            "confidence": "hunch"
+          }
+        ],
+        "forgotten": [
+          "time_exact",
+          "place",
+          "filename",
+          "keywords"
+        ]
+      },
+      "search_attempts": [
+        {
+          "query": "where are my screenshots ?",
+          "style": "natural_language",
+          "result": "no results / not populating"
+        }
+      ],
+      "failure": {
+        "primary_stage": "F3",
+        "secondary_stage": "none",
+        "mechanism": [
+          "vocabulary_mismatch",
+          "metadata_mismatch"
+        ]
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "practical",
+      "evidence_quotes": [
+        {
+          "text": "where are my screenshots ?",
+          "start_char": 0,
+          "end_char": 25
+        },
+        {
+          "text": "why are there so many folders labelled screenshots for this device ?",
+          "start_char": 84,
+          "end_char": 151
+        },
+        {
+          "text": "it's costing me my job my livelyhood and my means of getting by",
+          "start_char": 177,
+          "end_char": 239
+        }
+      ],
+      "extraction_confidence": 0.94,
+      "notes": "User is looking for utility screenshots, mentions mis‑ordered folders and multiple duplicate folders, expresses high practical stakes (job, livelihood)."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=fb8fe017-8d97-4b4d-9457-af78208bfafd",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Always missing photos and videos ☹️",
+    "country": "us",
+    "translated_text": "Always missing photos and videos ☹️",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports photos and videos are missing, indicating a retrieval issue but not explicitly about searching for a remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": [
+          "photos",
+          "videos"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F3",
+        "secondary_stage": "none",
+        "mechanism": [
+          "vocabulary_mismatch"
+        ]
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 2
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "Always missing photos and videos ☹️",
+          "start_char": 0,
+          "end_char": 33
+        }
+      ],
+      "extraction_confidence": 0.85,
+      "notes": "User provides only a brief expression of frustration; no concrete details about context, query style, or attempts."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=0c101b65-912e-4cb2-ae76-042735d6772a",
+    "date": "2026-10-05",
+    "rating": 2,
+    "language_original": "es",
+    "original_text": "no se qué hicieron ahora no permite poner nombre a los grupos de fotos",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] no se qué hicieron ahora no permite poner nombre a los grupos de fotos",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is complaining about album/group naming, a general organization issue rather than a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "not_stated",
+        "vagueness_level": "2_few_clues",
+        "archetype": "none",
+        "description_mode": [
+          "purpose",
+          "context"
+        ]
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": [
+          "album",
+          "keywords"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F0",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "no se qué hicieron ahora no permite poner nombre a los grupos de fotos",
+          "start_char": 0,
+          "end_char": 69
+        }
+      ],
+      "extraction_confidence": 0.9,
+      "notes": "User reports a UI change that blocks naming photo groups, indicating frustration but no search attempt."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8b51561a-29c8-4dbc-a34f-5c1cdcbd9190",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "awful, as much as i need a backup for my photos i for the love of god cannot use it bcuz of low memory, the app continuesly asks me to delete photos, every year new phones w bigger memory come out yet this app cannot raise its one too? unbelievable, it askes me to either delete or pay for backup or whatever, i never had this problem before, i dont understand why they cannot just raise the memory so it matches the phone, if i had another backup app i would have used it",
+    "country": "us",
+    "translated_text": "awful, as much as i need a backup for my photos i for the love of god cannot use it bcuz of low memory, the app continuesly asks me to delete photos, every year new phones w bigger memory come out yet this app cannot raise its one too? unbelievable, it askes me to either delete or pay for backup or whatever, i never had this problem before, i dont understand why they cannot just raise the memory so it matches the phone, if i had another backup app i would have used it",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is discussing backup memory issues and being prompted to delete photos, which relates to photo management but not a direct search/memory retrieval problem."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "0_exact_known",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [
+        "use another backup app"
+      ],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 2
+      },
+      "stakes": "practical",
+      "evidence_quotes": [
+        {
+          "text": "awful, as much as i need a backup for my photos i for the love of god cannot use it bcuz of low memory",
+          "start_char": 0,
+          "end_char": 101
+        }
+      ],
+      "extraction_confidence": 0.95,
+      "notes": "User complains that the backup app constantly asks to delete photos due to low allocated memory and offers paid options; no specific photo recall scenario described."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=680025bf-ccb0-4a14-bd73-6dde14646c72",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "HATE it since they turned off onedrive backup!!!!!",
+    "country": "us",
+    "translated_text": "HATE it since they turned off onedrive backup!!!!!",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about backup being turned off, implying potential photo loss, but does not explicitly mention searching for a remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "HATE it since they turned off onedrive backup!!!!!",
+          "start_char": 0,
+          "end_char": 50
+        }
+      ],
+      "extraction_confidence": 1.0,
+      "notes": "User expresses frustration about disabled OneDrive backup; no recall or search context provided."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=de5e12b9-01f2-49f3-b524-d591359fa6c0",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "not saving photos well.. and omitting other photos",
+    "country": "us",
+    "translated_text": "not saving photos well.. and omitting other photos",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User reports photos being omitted, indicating missing or unsaved images, which is related to retrieval but not a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": [
+          "other"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F0",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "not saving photos well.. and omitting other photos",
+          "start_char": 0,
+          "end_char": 49
+        }
+      ],
+      "extraction_confidence": 0.9,
+      "notes": "User reports that photos are not being saved properly and some are omitted, indicating a failure in the saving process rather than a search issue."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=1bffd540-0a5c-43ab-acda-32ca44d1216b",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Where did the pin Shared Album feature go?",
+    "country": "us",
+    "translated_text": "Where did the pin Shared Album feature go?",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User is asking about a missing feature, not about searching for a specific remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "not_stated",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "neutral",
+        "intensity": 0
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "Where did the pin Shared Album feature go?",
+          "start_char": 0,
+          "end_char": 41
+        }
+      ],
+      "extraction_confidence": 1.0,
+      "notes": "User asks about missing UI feature; no memory or search context provided."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=edfda6a0-6acc-44b3-bc9c-098d813df514",
+    "date": "2026-10-04",
+    "rating": 2,
+    "language_original": "en",
+    "original_text": "good. to show lost photo",
+    "country": "us",
+    "translated_text": "good. to show lost photo",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.7,
+      "reason": "User references a lost photo but does not explicitly describe a search or memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "not_stated",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "not_stated",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "good. to show lost photo",
+          "start_char": 0,
+          "end_char": 23
+        }
+      ],
+      "extraction_confidence": 0.4,
+      "notes": "User provided only a brief statement with no details about the photo, its context, or search attempts."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=4f0495cc-46f4-4103-87cd-a199e531d9dd",
+    "date": "2026-10-04",
+    "rating": 3,
+    "language_original": "en",
+    "original_text": "You can't even organize your folders alphabetically. The organization is absolutely mindless",
+    "country": "us",
+    "translated_text": "You can't even organize your folders alphabetically. The organization is absolutely mindless",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User complains about folder organization, which is related to photo management but not explicitly about searching for a remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "not_stated",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "You can't even organize your folders alphabetically.",
+          "start_char": 0,
+          "end_char": 51
+        },
+        {
+          "text": "The organization is absolutely mindless",
+          "start_char": 53,
+          "end_char": 91
+        }
+      ],
+      "extraction_confidence": 1.0,
+      "notes": "User complains about folder organization; no specific photo memory, search attempt, or outcome described."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=c6c06e77-a2a5-4ae5-a89a-fcdd0c05f13d",
+    "date": "2026-10-04",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "I need my older photo's",
+    "country": "us",
+    "translated_text": "I need my older photo's",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.8,
+      "reason": "User mentions needing an older photo, indicating a search/memory retrieval issue."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "not_stated",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "none",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": [
+          "time_exact",
+          "place",
+          "person",
+          "album",
+          "filename",
+          "keywords",
+          "date",
+          "source"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "not_stated",
+        "intensity": 0
+      },
+      "stakes": "not_stated",
+      "evidence_quotes": [
+        {
+          "text": "I need my older photo's",
+          "start_char": 0,
+          "end_char": 22
+        }
+      ],
+      "extraction_confidence": 0.8,
+      "notes": "User provides minimal request, no context about photo content, time, or purpose."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=e36bdb91-be69-4ea6-9a4d-451ad1eaa5b8",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "can't open it up to see my photos. Google stopping me from doing it once again. always ducking with my stuff",
+    "country": "us",
+    "translated_text": "can't open it up to see my photos. Google stopping me from doing it once again. always ducking with my stuff",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports inability to open photos due to Google blocking access, an access/organization issue rather than a search/memory failure."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "A8",
+        "description_mode": [
+          "content",
+          "context"
+        ]
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": [
+          "other"
+        ]
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "F1",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_found",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "can't open it up to see my photos.",
+          "start_char": 0,
+          "end_char": 33
+        },
+        {
+          "text": "Google stopping me from doing it once again.",
+          "start_char": 35,
+          "end_char": 78
+        },
+        {
+          "text": "always ducking with my stuff",
+          "start_char": 80,
+          "end_char": 107
+        }
+      ],
+      "extraction_confidence": 0.9,
+      "notes": "User reports inability to open photos due to Google blocking, expresses frustration; no specific search query or details provided."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=54e34f27-e924-4560-bdc0-3c6d55efe18d",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "horrible. auto-synchs or deletes photos on phone in non-synch mode if you upload them.",
+    "country": "us",
+    "translated_text": "horrible. auto-synchs or deletes photos on phone in non-synch mode if you upload them.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about auto-sync/deletion behavior, not about searching for a remembered photo."
+    },
+    "stage_b": {
+      "scenario": {
+        "target_type": "other",
+        "target_age": "not_stated",
+        "vagueness_level": "3_only_feelings",
+        "archetype": "A7",
+        "description_mode": []
+      },
+      "memory": {
+        "remembered": [],
+        "forgotten": []
+      },
+      "search_attempts": [],
+      "failure": {
+        "primary_stage": "none",
+        "secondary_stage": "none",
+        "mechanism": []
+      },
+      "workarounds": [],
+      "outcome": "not_stated",
+      "emotion": {
+        "type": "frustration",
+        "intensity": 1
+      },
+      "stakes": "sentimental",
+      "evidence_quotes": [
+        {
+          "text": "auto-synchs or deletes photos on phone in non-synch mode if you upload them.",
+          "start_char": 10,
+          "end_char": 86
+        }
+      ],
+      "extraction_confidence": 0.98,
+      "notes": "User complains that uploading photos triggers automatic sync or deletion even when device is set to non-sync mode."
+    }
+  }
+]

@@ -22,7 +22,7 @@ class PlayStoreCollector(BaseCollector):
                     lang='en', # default to en, langdetect will handle others if we pass other langs
                     country=country,
                     sort=Sort.NEWEST,
-                    count=1000
+                    count=4000
                 )
                 
                 for r in result:

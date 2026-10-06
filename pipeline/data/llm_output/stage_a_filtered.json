@@ -1,0 +1,452 @@
+[
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=88b6e64d-5996-41b3-a4fc-3df04e0fc430",
+    "date": "2026-10-05",
+    "rating": 4,
+    "language_original": "en",
+    "original_text": "was better before they implemented AI. Now you have to be more descriptive in trying to find a particular photo in your search.",
+    "country": "us",
+    "translated_text": "was better before they implemented AI. Now you have to be more descriptive in trying to find a particular photo in your search.",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.9,
+      "reason": "User is explicitly discussing difficulty finding a specific photo due to search changes."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8ba642a1-416a-4f52-aeb6-f22238c50c08",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "update has made it horrible. edited pictures are saved far away in the sequence and it's impossible to locate them. edit options are placed absurdly.",
+    "country": "us",
+    "translated_text": "update has made it horrible. edited pictures are saved far away in the sequence and it's impossible to locate them. edit options are placed absurdly.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports difficulty locating edited photos due to changes in organization, not a specific memory-based search issue."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=4447c1b9-4a8f-4a69-b7c2-02716f70dbe5",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "I am not worried about preserving my memories.Even when I have a new phone,all I need is to open my email on my new phone and voila!, the photos upload.",
+    "country": "us",
+    "translated_text": "I am not worried about preserving my memories.Even when I have a new phone,all I need is to open my email on my new phone and voila!, the photos upload.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User discusses automatic photo upload to email, not searching for a specific remembered photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=f20c6bf7-c907-40fc-a5c3-40c8b8c212f1",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "as of 2026 the photos merge instead of separating the dates this app need to be updated",
+    "country": "us",
+    "translated_text": "as of 2026 the photos merge instead of separating the dates this app need to be updated",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User complains about photos merging by date, an organization issue rather than a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=242a2ed0-821d-4273-b681-863d74d84f9c",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "Why can't you access your locked videos and pictures from your second device",
+    "country": "us",
+    "translated_text": "Why can't you access your locked videos and pictures from your second device",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is discussing access to locked media on a second device, which involves retrieval but not a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=cfb40601-5015-40f2-bbc5-1690c4f68cdb",
+    "date": "2026-10-05",
+    "rating": 3,
+    "language_original": "af",
+    "original_text": "ye aap se photos delete nahi hote",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] ye aap se photos delete nahi hote",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User complains about photos not being deleted, indicating a photo management issue rather than a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=15b344bc-1d34-4a8a-aa2b-387bc3c27b3b",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "The app is good, I still saw my 5years picture after changing diff phone.",
+    "country": "us",
+    "translated_text": "The app is good, I still saw my 5years picture after changing diff phone.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User mentions seeing a photo after changing phones, indicating backup/sync context rather than a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=1e7cf814-ac07-4b51-ae8c-b61217ec983b",
+    "date": "2026-10-05",
+    "rating": 3,
+    "language_original": "en",
+    "original_text": "This app worked great to summer 2021. I don't go into it anymore. I don't want to risk it backing up. I lowered rating to 3 stars. Two reasons: 1. It takes up so much space on my phone even when I haven't done backups to it since 2021. 2. The change to having high-resolution pics count against the 15GB quota. I figured it had to happen someday, but I still don't like it & stopped using. Plus, I can't simply delete old things. It wants to delete from my devices as well, every time.",
+    "country": "us",
+    "translated_text": "This app worked great to summer 2021. I don't go into it anymore. I don't want to risk it backing up. I lowered rating to 3 stars. Two reasons: 1. It takes up so much space on my phone even when I haven't done backups to it since 2021. 2. The change to having high-resolution pics count against the 15GB quota. I figured it had to happen someday, but I still don't like it & stopped using. Plus, I can't simply delete old things. It wants to delete from my devices as well, every time.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User discusses backup, storage, and deletion issues, not a search or memory failure for a specific photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=73d98a66-fbe3-4fe2-8b81-9198d0f75f48",
+    "date": "2026-10-05",
+    "rating": 2,
+    "language_original": "en",
+    "original_text": "Given that I already don't like Google and don't trust the way they use information, this rating is a little biased. right now, I'm dealing with a glitch where several videos are both in the trash (so I can't share them or use them) and not in the trash (so I can't remove them from the trash). I'm very frustrated because these videos are important to me and I only tried to put them in the trash because I thought they had successfully sent to a family member. Still unsure why they didn't.",
+    "country": "us",
+    "translated_text": "Given that I already don't like Google and don't trust the way they use information, this rating is a little biased. right now, I'm dealing with a glitch where several videos are both in the trash (so I can't share them or use them) and not in the trash (so I can't remove them from the trash). I'm very frustrated because these videos are important to me and I only tried to put them in the trash because I thought they had successfully sent to a family member. Still unsure why they didn't.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is dealing with videos stuck in trash, an organization/retrieval issue but not a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=75b75bc9-fe81-4bbb-a3bd-4bdffc8ce50d",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "The folder and file system is absolutely awful. I feel like I never know how to find my photos. Folders? Albums? Sometimes I try to move things but it fails? 3P apps are rarely integrated so sharing photos becomes a hassle.",
+    "country": "us",
+    "translated_text": "The folder and file system is absolutely awful. I feel like I never know how to find my photos. Folders? Albums? Sometimes I try to move things but it fails? 3P apps are rarely integrated so sharing photos becomes a hassle.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about poor folder/album organization and difficulty locating photos, which is related to retrieval but not a specific search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=70b51783-e828-4304-9758-2cbf4d8a4ed3",
+    "date": "2026-10-05",
+    "rating": 2,
+    "language_original": "en",
+    "original_text": "This app is not very good for organizing photos. While there are albums, it's not really designed to segregate specific photos easily for sharing. It seems designed more for Google to farm your pictures.",
+    "country": "us",
+    "translated_text": "This app is not very good for organizing photos. While there are albums, it's not really designed to segregate specific photos easily for sharing. It seems designed more for Google to farm your pictures.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User discusses photo organization and album segregation, not a specific search or memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=eb30678f-e5ea-4f34-a635-6b62b600caf2",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "whole album disappeared",
+    "country": "us",
+    "translated_text": "whole album disappeared",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports an entire album missing, indicating a retrieval issue but not a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=53525c83-cd38-4138-9daf-e13152ada108",
+    "date": "2026-10-05",
+    "rating": 4,
+    "language_original": "no",
+    "original_text": "by mistak moblie restore my some videos photos hiden old my data lost",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] by mistak moblie restore my some videos photos hiden old my data lost",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User reports lost or hidden photos, indicating a retrieval issue but not explicitly describing a search or memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=e9010ae7-fac2-4e9e-b95b-f493a599bfc3",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Horrible! I had all setup MY WAY. NOW, just ALL mixed up. Play music, decide move my photos to weird places. Certainly DO NOT WANT AUTO LOCATION SHOWN OF OVER 350 Photos! Incorrect mostly. I AM NOT 14-25 YEARS OLD. I USE FOR BUSINESS ALOT. I DO NOT WANT ALL THESE USELESS BELLS & WHISTLES! WHAT A HUGE WASTE OF MY TIME TO UNDO THIS GARBAGE.",
+    "country": "us",
+    "translated_text": "Horrible! I had all setup MY WAY. NOW, just ALL mixed up. Play music, decide move my photos to weird places. Certainly DO NOT WANT AUTO LOCATION SHOWN OF OVER 350 Photos! Incorrect mostly. I AM NOT 14-25 YEARS OLD. I USE FOR BUSINESS ALOT. I DO NOT WANT ALL THESE USELESS BELLS & WHISTLES! WHAT A HUGE WASTE OF MY TIME TO UNDO THIS GARBAGE.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about photos being moved to wrong locations and auto‑location issues, which is an organization problem rather than a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=c8fec8b4-5532-4cc7-92db-06f7aae007f4",
+    "date": "2026-10-05",
+    "rating": 5,
+    "language_original": "tl",
+    "original_text": "all photos Anand karaganni",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] all photos Anand karaganni",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.8,
+      "reason": "User is trying to locate all photos of a specific person, indicating a search/memory retrieval issue."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8e98ad7c-3535-48d2-8601-de2baaa09fe2",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "totally deleted all my albums that took 10 years to make",
+    "country": "us",
+    "translated_text": "totally deleted all my albums that took 10 years to make",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports deleting albums, indicating missing photos, but does not mention searching for a specific remembered photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=1272885e-536e-46bf-8efc-51885fb9d2eb",
+    "date": "2026-10-05",
+    "rating": 4,
+    "language_original": "en",
+    "original_text": "can you make it to where you can add specific people and stuff?? like, how it has specific people in specific icons, ones that automatically transfer to that icon if it is of that person or has that person or animal? that would be a major help with organizing photos and stuff so that way whenever it is of that person or animal, it will automatically go to it. please and thank you, it would be majorly helpful and simpler, and it would really make things easier.",
+    "country": "us",
+    "translated_text": "can you make it to where you can add specific people and stuff?? like, how it has specific people in specific icons, ones that automatically transfer to that icon if it is of that person or has that person or animal? that would be a major help with organizing photos and stuff so that way whenever it is of that person or animal, it will automatically go to it. please and thank you, it would be majorly helpful and simpler, and it would really make things easier.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is requesting a feature for automatic organization by people/animals, which is general photo management rather than a specific search/memory retrieval issue."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=2fceed12-07d7-4971-a7cf-3dd064da2ffe",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Thousands of my photos were deleted!!!!",
+    "country": "us",
+    "translated_text": "Thousands of my photos were deleted!!!!",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports missing photos, indicating a retrieval issue but not explicitly about searching for a remembered photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8fce4b5e-50d7-404f-a3a4-e7d13705bd86",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "where are my screenshots ? they are they not populating in the order I configured ? why are there so many folders labelled screenshots for this device ? I'm so sick of thus and it's costing me my job my livelyhood and my means of getting by you know eating and paying bills nothing can be accomplished and myself and a group of phychologists always trace it back to some data we relied on this paid for service to supply actually just hijacks it off the device and away from the owner but avail2etal",
+    "country": "us",
+    "translated_text": "where are my screenshots ? they are they not populating in the order I configured ? why are there so many folders labelled screenshots for this device ? I'm so sick of thus and it's costing me my job my livelyhood and my means of getting by you know eating and paying bills nothing can be accomplished and myself and a group of phychologists always trace it back to some data we relied on this paid for service to supply actually just hijacks it off the device and away from the owner but avail2etal",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.9,
+      "reason": "User is explicitly asking where their screenshots are and complaining about missing or misordered screenshots, indicating a photo retrieval issue."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=fb8fe017-8d97-4b4d-9457-af78208bfafd",
+    "date": "2026-10-05",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Always missing photos and videos ☹️",
+    "country": "us",
+    "translated_text": "Always missing photos and videos ☹️",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports photos and videos are missing, indicating a retrieval issue but not explicitly about searching for a remembered photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=0c101b65-912e-4cb2-ae76-042735d6772a",
+    "date": "2026-10-05",
+    "rating": 2,
+    "language_original": "es",
+    "original_text": "no se qué hicieron ahora no permite poner nombre a los grupos de fotos",
+    "country": "us",
+    "translated_text": "[PENDING TRANSLATION] no se qué hicieron ahora no permite poner nombre a los grupos de fotos",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is complaining about album/group naming, a general organization issue rather than a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=8b51561a-29c8-4dbc-a34f-5c1cdcbd9190",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "awful, as much as i need a backup for my photos i for the love of god cannot use it bcuz of low memory, the app continuesly asks me to delete photos, every year new phones w bigger memory come out yet this app cannot raise its one too? unbelievable, it askes me to either delete or pay for backup or whatever, i never had this problem before, i dont understand why they cannot just raise the memory so it matches the phone, if i had another backup app i would have used it",
+    "country": "us",
+    "translated_text": "awful, as much as i need a backup for my photos i for the love of god cannot use it bcuz of low memory, the app continuesly asks me to delete photos, every year new phones w bigger memory come out yet this app cannot raise its one too? unbelievable, it askes me to either delete or pay for backup or whatever, i never had this problem before, i dont understand why they cannot just raise the memory so it matches the phone, if i had another backup app i would have used it",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User is discussing backup memory issues and being prompted to delete photos, which relates to photo management but not a direct search/memory retrieval problem."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=680025bf-ccb0-4a14-bd73-6dde14646c72",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "HATE it since they turned off onedrive backup!!!!!",
+    "country": "us",
+    "translated_text": "HATE it since they turned off onedrive backup!!!!!",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about backup being turned off, implying potential photo loss, but does not explicitly mention searching for a remembered photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=de5e12b9-01f2-49f3-b524-d591359fa6c0",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "not saving photos well.. and omitting other photos",
+    "country": "us",
+    "translated_text": "not saving photos well.. and omitting other photos",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User reports photos being omitted, indicating missing or unsaved images, which is related to retrieval but not a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=1bffd540-0a5c-43ab-acda-32ca44d1216b",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "Where did the pin Shared Album feature go?",
+    "country": "us",
+    "translated_text": "Where did the pin Shared Album feature go?",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User is asking about a missing feature, not about searching for a specific remembered photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=edfda6a0-6acc-44b3-bc9c-098d813df514",
+    "date": "2026-10-04",
+    "rating": 2,
+    "language_original": "en",
+    "original_text": "good. to show lost photo",
+    "country": "us",
+    "translated_text": "good. to show lost photo",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.7,
+      "reason": "User references a lost photo but does not explicitly describe a search or memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=4f0495cc-46f4-4103-87cd-a199e531d9dd",
+    "date": "2026-10-04",
+    "rating": 3,
+    "language_original": "en",
+    "original_text": "You can't even organize your folders alphabetically. The organization is absolutely mindless",
+    "country": "us",
+    "translated_text": "You can't even organize your folders alphabetically. The organization is absolutely mindless",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.8,
+      "reason": "User complains about folder organization, which is related to photo management but not explicitly about searching for a remembered photo."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=c6c06e77-a2a5-4ae5-a89a-fcdd0c05f13d",
+    "date": "2026-10-04",
+    "rating": 5,
+    "language_original": "en",
+    "original_text": "I need my older photo's",
+    "country": "us",
+    "translated_text": "I need my older photo's",
+    "stage_a": {
+      "retrieval_related": "yes",
+      "confidence": 0.8,
+      "reason": "User mentions needing an older photo, indicating a search/memory retrieval issue."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=e36bdb91-be69-4ea6-9a4d-451ad1eaa5b8",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "can't open it up to see my photos. Google stopping me from doing it once again. always ducking with my stuff",
+    "country": "us",
+    "translated_text": "can't open it up to see my photos. Google stopping me from doing it once again. always ducking with my stuff",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User reports inability to open photos due to Google blocking access, an access/organization issue rather than a search/memory failure."
+    }
+  },
+  {
+    "source": "play_store",
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=54e34f27-e924-4560-bdc0-3c6d55efe18d",
+    "date": "2026-10-04",
+    "rating": 1,
+    "language_original": "en",
+    "original_text": "horrible. auto-synchs or deletes photos on phone in non-synch mode if you upload them.",
+    "country": "us",
+    "translated_text": "horrible. auto-synchs or deletes photos on phone in non-synch mode if you upload them.",
+    "stage_a": {
+      "retrieval_related": "adjacent",
+      "confidence": 0.9,
+      "reason": "User complains about auto-sync/deletion behavior, not about searching for a remembered photo."
+    }
+  }
+]

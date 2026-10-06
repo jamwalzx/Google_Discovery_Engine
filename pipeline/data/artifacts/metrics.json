@@ -1,0 +1,78 @@
+{
+  "funnel": {
+    "none": 51.85185185185185,
+    "F1": 14.814814814814813,
+    "F2": 11.11111111111111,
+    "F0": 11.11111111111111,
+    "F3": 11.11111111111111
+  },
+  "opportunity": [
+    {
+      "archetype": "A2",
+      "stage": "F3",
+      "frequency": 0.07407407407407407,
+      "severity": 0.5,
+      "unresolved": 0.5,
+      "ai_fit": 5,
+      "strat_fit": 5
+    },
+    {
+      "archetype": "A6",
+      "stage": "F2",
+      "frequency": 0.037037037037037035,
+      "severity": 1.0,
+      "unresolved": 0.0,
+      "ai_fit": 5,
+      "strat_fit": 5
+    },
+    {
+      "archetype": "A7",
+      "stage": "F1",
+      "frequency": 0.07407407407407407,
+      "severity": 1.0,
+      "unresolved": 1.0,
+      "ai_fit": 5,
+      "strat_fit": 5
+    },
+    {
+      "archetype": "A7",
+      "stage": "F2",
+      "frequency": 0.037037037037037035,
+      "severity": 1.0,
+      "unresolved": 1.0,
+      "ai_fit": 5,
+      "strat_fit": 5
+    },
+    {
+      "archetype": "A8",
+      "stage": "F1",
+      "frequency": 0.037037037037037035,
+      "severity": 1.0,
+      "unresolved": 1.0,
+      "ai_fit": 5,
+      "strat_fit": 5
+    },
+    {
+      "archetype": "A8",
+      "stage": "F2",
+      "frequency": 0.037037037037037035,
+      "severity": 1.0,
+      "unresolved": 0.0,
+      "ai_fit": 5,
+      "strat_fit": 5
+    }
+  ],
+  "memory": {
+    "remembered": {
+      "time": 45,
+      "place": 35,
+      "person": 25,
+      "event": 20
+    },
+    "forgotten": {
+      "exact_date": 60,
+      "keywords": 50,
+      "filename": 40
+    }
+  }
+}
